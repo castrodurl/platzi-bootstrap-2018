@@ -1,0 +1,65 @@
+$footer-background: linear-gradient(90deg, #1c3643, #273b47 25%, #1e5372);
+$color-claro: white;
+$color-oscuro: black;
+$verde-platzi: #97c93e;
+@mixin imageOverlay {
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba($color: $color-oscuro, $alpha: 0.5);
+	color: $color-claro;
+}
+
+#footer {
+	background: $footer-background;
+	a {
+		color: $color-claro;
+		text-decoration: none;
+	}
+}
+
+#header {
+	img {
+		width: 80px;
+	}
+}
+
+#carouselSection {
+	.carousel-inner {
+		img {
+			max-height: 70vh;
+			object-fit: cover;
+			filter: grayscale(70%);
+		}
+	}
+}
+
+#carousel {
+	position: relative;
+	.overlay {
+		@include imageOverlay();
+		.container,
+		.row {
+			height: 100%;
+		}
+	}
+}
+
+.btn-platzi {
+	background-color: $verde-platzi;
+	color: white !important;
+	&:hover {
+		background-color: #82ad36;
+	}
+}
+
+#place-time {
+	background-color: #333a40;
+	color: white;
+	img {
+		max-width: 100%;
+	}
+}
